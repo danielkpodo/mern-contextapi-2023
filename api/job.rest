@@ -1,0 +1,40 @@
+### CREATE NEW JOB
+POST http://localhost:5000/api/v1/jobs
+Authorization: Bearer {{$dotenv AUTH_TOKEN}}
+Content-Type: application/json
+
+{
+    "position": "Lead Developer",
+    "company": "Yamatoko"
+}
+
+### GET ALL JOB
+GET http://localhost:5000/api/v1/jobs?status=all&jobType=all&search=&sort=z-a&page=1&limit=
+Authorization: Bearer {{$dotenv AUTH_TOKEN}}
+Content-Type: application/json
+
+
+### UPDATE EXISTING JOB
+PATCH http://localhost:5000/api/v1/jobs/62bdfbf01592fe6ab344b52a
+Authorization: Bearer {{$dotenv AUTH_TOKEN}}
+Content-Type: application/json
+
+{
+    "position": "Accra Developer",
+    "company": "Altologica"
+}
+
+### DELETE EXISTING JOB
+DELETE http://localhost:5000/api/v1/jobs/62bdfbf01592fe6ab344b52a
+Authorization: Bearer {{$dotenv AUTH_TOKEN}}
+Content-Type: application/json
+
+### GET EXISTING JOB
+GET http://localhost:5000/api/v1/jobs/:id
+Content-Type: application/json
+
+### SHOW OVERALL STATS
+GET http://localhost:5000/api/v1/jobs/stats
+Authorization: Bearer {{$dotenv AUTH_TOKEN}}
+Content-Type: application/json
+

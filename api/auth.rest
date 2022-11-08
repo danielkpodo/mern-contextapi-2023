@@ -1,0 +1,36 @@
+### REGISTER NEW USER
+POST http://localhost:5000/api/v1/auth/register
+Content-Type: application/json
+
+{
+   "name": "Doreen",
+   "lastname": "Esi",
+   "password": "maameesi",
+   "email": "naphthanewman+test1@gmail.com"
+}
+
+
+### REGISTER A NEW USER
+POST http://localhost:5000/api/v1/auth/login
+Content-Type: application/json
+
+{
+   "email": "naphthanewman@gmail.com",
+   "password": "dannewman33"
+}
+
+
+
+### UPDATE EXISTING USER
+PATCH http://localhost:5000/api/v1/auth/updateUser
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmI1NTViYTEwNmUwZDExYmQ5YmM1MjgiLCJpYXQiOjE2NTY0ODE0NzYsImV4cCI6MTY1NjU2Nzg3Nn0.NM-8VVYtX-u69FjbWu7H9N7VfIsk_8Fp188rkDch8Qk
+Content-Type: application/json
+
+{
+   "lastName": "Jmae",
+   "name":"Andrews",
+   "location": "Ada",
+   "email": "locals@gmail.com"
+}
+
+
