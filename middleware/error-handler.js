@@ -21,6 +21,17 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     defaultError.msg = `${Object.keys(err.keyValue)} field must be unique`;
   }
 
+  /**
+   * From mosh course simplified
+   */
+
+  //simplified error handling
+  // for (field in err.errors) {
+  //   if (err.errors[field]) {
+  //     return res.status(400).send(err.errors[field].message);
+  //   }
+  // }
+
   /** Return only one error @time */
   const errors = defaultError.msg.split(',');
   errors.map((error) => {

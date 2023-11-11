@@ -1,13 +1,14 @@
-import Job from '../models/Job.js';
-import { StatusCodes } from 'http-status-codes';
 import {
   BadRequestError,
   NotFoundError,
   UnauthenticatedError,
 } from '../errors/index.js';
+
+import Job from '../models/Job.js';
+import { StatusCodes } from 'http-status-codes';
 import checkPermission from '../utils/checkPermission.js';
-import mongoose from 'mongoose';
 import moment from 'moment';
+import mongoose from 'mongoose';
 
 const createJob = async (req, res) => {
   const { position, company } = req.body;
@@ -65,7 +66,7 @@ const getAllJob = async (req, res) => {
   const page = Number(req.query.page) || 1;
   const limit = Number(req.query.limit) || 10;
   // enables you to skip a record using this will skip the first record
-  const skip = limit * (page - 1);
+  const skip = (page - 1) * limit;
 
   result.skip(skip).limit(limit);
 

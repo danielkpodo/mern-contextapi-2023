@@ -1,9 +1,11 @@
-import express from 'express';
-import rateLimiter from 'express-rate-limit';
 import { login, register, updateUser } from '../controllers/authController.js';
-const router = express.Router();
+
 //verification token
 import authenticateUser from '../middleware/auth.js';
+import express from 'express';
+import rateLimiter from 'express-rate-limit';
+
+const router = express.Router();
 
 /** Setup Rate Limiting */
 const apiLimiter = rateLimiter({

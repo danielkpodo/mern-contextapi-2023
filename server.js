@@ -1,25 +1,24 @@
-import dotenv from 'dotenv';
-import express from 'express';
-import connectDb from './db/connect.js';
-dotenv.config();
 import 'express-async-errors';
-import cors from 'cors';
-import morgan from 'morgan';
-import helmet from 'helmet';
-import xss from 'xss-clean';
-import mongoSanitize from 'express-mongo-sanitize';
-
-const app = express();
 
 /** Import routes */
 import authRouter from './routes/authRoutes.js';
-import jobRouter from './routes/jobRoutes.js';
-
-/** Import middleware */
-import errorHandlerMiddleware from './middleware/error-handler.js';
-import notFoundMiddleware from './middleware/not-found.js';
 //import here for all routes that need auth
 import authenticateUser from './middleware/auth.js';
+import connectDb from './db/connect.js';
+import cors from 'cors';
+import dotenv from 'dotenv';
+/** Import middleware */
+import errorHandlerMiddleware from './middleware/error-handler.js';
+import express from 'express';
+import helmet from 'helmet';
+import jobRouter from './routes/jobRoutes.js';
+import mongoSanitize from 'express-mongo-sanitize';
+import morgan from 'morgan';
+import notFoundMiddleware from './middleware/not-found.js';
+import xss from 'xss-clean';
+dotenv.config();
+
+const app = express();
 
 /** SECURITY PACKAGES */
 /** Setup rate limiting expecially for login and register page */
