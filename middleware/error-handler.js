@@ -25,7 +25,7 @@ const errorHandlerMiddleware = (err, req, res, next) => {
    * From mosh course simplified
    */
 
-  //simplified error handling
+  // simplified error handling
   // for (field in err.errors) {
   //   if (err.errors[field]) {
   //     return res.status(400).send(err.errors[field].message);
